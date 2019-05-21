@@ -14,7 +14,7 @@ Jump right in to building Kibana prototypes with [EUI](https://github.com/elasti
 
 1.  **Create a Gatsby site.**
 
-    Use the Gatsby CLI to create a new site, specifying the default starter.
+    Use the Gatsby CLI to create a new site, specifying the Kibana starter.
 
     ```sh
     # create a new Gatsby site using the default starter
