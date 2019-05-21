@@ -1,13 +1,28 @@
-import React from "react"
+import React, { Fragment, Link } from "react"
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Layout from "../components/layout";
+import { EuiEmptyPrompt, EuiButton } from '@elastic/eui';
 
 const NotFoundPage = () => (
   <Layout>
-    <SEO title="404: Not found" />
-    <h1>NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+    <EuiEmptyPrompt
+    iconType="editorStrike"
+    title={<h2>Ack! There's nothing here.</h2>}
+    body={
+      <Fragment>
+        <p>
+          You found a page that doesn't exist.
+        </p>
+      </Fragment>
+    }
+    actions={
+      <Link to="/">
+        <EuiButton color="primary" fill>
+          Go Home
+        </EuiButton>
+      </Link>
+    }
+  />
   </Layout>
 )
 
