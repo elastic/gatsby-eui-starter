@@ -1,8 +1,6 @@
-import React from 'react';
-
 export const pinExtraAction = {
-  color: 'subdued',
-  iconType: 'pin',
-  iconSize: 's',
-  'aria-label': 'Pin to top',
-};
+  color: "subdued",
+  iconType: "pin",
+  iconSize: "s",
+  "aria-label": "Pin to top",
+}

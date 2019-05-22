@@ -1,11 +1,10 @@
-import React from 'react'; 
-import { pinExtraAction } from './pin_extra_action';
+import { pinExtraAction } from "./pin_extra_action"
 
 export const ExploreLinks = [
   {
-    label: 'Canvas',
-    href: '/#/layout/nav-drawer',
-    iconType: 'canvasApp',
+    label: "Canvas",
+    href: "/#/layout/nav-drawer",
+    iconType: "canvasApp",
     isActive: true,
     extraAction: {
       ...pinExtraAction,
@@ -13,32 +12,32 @@ export const ExploreLinks = [
     },
   },
   {
-    label: 'Discover',
-    href: '/#/layout/nav-drawer',
-    iconType: 'discoverApp',
+    label: "Discover",
+    href: "/#/layout/nav-drawer",
+    iconType: "discoverApp",
     extraAction: pinExtraAction,
   },
   {
-    label: 'Visualize',
-    href: '/#/layout/nav-drawer',
-    iconType: 'visualizeApp',
+    label: "Visualize",
+    href: "/#/layout/nav-drawer",
+    iconType: "visualizeApp",
     extraAction: pinExtraAction,
   },
   {
-    label: 'Dashboard',
-    href: '/#/layout/nav-drawer',
-    iconType: 'dashboardApp',
+    label: "Dashboard",
+    href: "/#/layout/nav-drawer",
+    iconType: "dashboardApp",
     extraAction: pinExtraAction,
   },
   {
-    label: 'Machine learning',
-    href: '/#/layout/nav-drawer',
-    iconType: 'machineLearningApp',
+    label: "Machine learning",
+    href: "/#/layout/nav-drawer",
+    iconType: "machineLearningApp",
     extraAction: pinExtraAction,
   },
   {
-    label: 'Custom Plugin (no icon)',
-    href: '/#/layout/nav-drawer',
+    label: "Custom Plugin (no icon)",
+    href: "/#/layout/nav-drawer",
     extraAction: pinExtraAction,
   },
-];
+]
