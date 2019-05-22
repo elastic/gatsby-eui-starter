@@ -5,9 +5,9 @@
  * See: https://www.gatsbyjs.org/docs/static-query/
  */
 
-import React from "react"
+import React from 'react';
 
-import "./layout.scss"
+import './layout.scss';
 
 import {
   EuiHeader,
@@ -32,7 +32,6 @@ import { AdminLinks } from './navigation_links/admin_links';
 import { keyCodes } from '@elastic/eui/lib/services';
 
 export default class Layout extends React.Component {
-
   constructor(props) {
     super(props);
 
@@ -92,7 +91,7 @@ export default class Layout extends React.Component {
         },
         'data-test-subj': 'breadcrumbsAnimals',
         className: 'customClass',
-      }
+      },
     ];
 
     return <EuiHeaderBreadcrumbs breadcrumbs={breadcrumbs} />;
@@ -145,11 +144,9 @@ export default class Layout extends React.Component {
             <EuiHorizontalRule margin="none" />
             <EuiNavDrawerGroup listItems={AdminLinks} />
           </EuiNavDrawer>
-          <div className="demoWrapper">
-            { this.props.children }
-          </div>
+          <div className="demoWrapper">{this.props.children}</div>
         </div>
       </EuiFocusTrap>
-    )
+    );
   }
 }

@@ -1,5 +1,3 @@
-import React from 'react';
-
 const faveExtraAction = {
   color: 'subdued',
   iconType: 'starEmpty',
@@ -69,4 +67,4 @@ export const TopLinks = [
       ],
     },
   },
-]
+];
