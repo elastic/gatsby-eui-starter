@@ -7,6 +7,7 @@
 
 import React from "react"
 
+import "../styles/index.scss"
 import "./layout.scss"
 
 import {

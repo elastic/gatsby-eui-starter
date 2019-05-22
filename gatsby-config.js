@@ -1,7 +1,5 @@
 module.exports = {
-  module.exports = {
-    pathPrefix: "/gatsby-kibana-starter",
-  },
+  pathPrefix: "/gatsby-kibana-starter",
   siteMetadata: {
     title: `Gatsby Kibana Starter`,
     description: `Start building Kibana protoypes quickly with the Gatsby Kibana Starter`,
