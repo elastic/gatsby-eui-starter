@@ -7,7 +7,8 @@
 
 import React from 'react';
 
-import './layout.scss';
+import '../styles/index.scss'
+import './layout.scss'
 
 import {
   EuiHeader,

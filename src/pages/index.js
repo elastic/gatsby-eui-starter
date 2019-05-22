@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
-import '../styles/index.scss';
-import Layout from '../components/layout';
+import Layout from '../components/layout'
 import {
   EuiPage,
   EuiPageBody,

@@ -1,4 +1,5 @@
-import React, { Fragment, Link } from 'react';
+import React, { Fragment } from 'react'
+import { Link } from 'gatsby'
 
 import Layout from '../components/layout';
 import { EuiEmptyPrompt, EuiButton } from '@elastic/eui';
