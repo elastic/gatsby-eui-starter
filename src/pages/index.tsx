@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
-import Layout from '../components/layout'
+import Layout from '../components/layout';
 import {
   EuiPage,
   EuiPageBody,
@@ -13,6 +13,8 @@ import {
   EuiPageHeaderSection,
   EuiTitle,
 } from '@elastic/eui';
+
+import MyComponent from '../components/my_component';
 
 export default class Index extends React.Component {
   render() {
@@ -33,7 +35,7 @@ export default class Index extends React.Component {
               <EuiPageContentHeader>
                 <EuiPageContentHeaderSection>
                   <EuiTitle>
-                    <h2>Content title</h2>
+                    <MyComponent/>
                   </EuiTitle>
                 </EuiPageContentHeaderSection>
                 <EuiPageContentHeaderSection>

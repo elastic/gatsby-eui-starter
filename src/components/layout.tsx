@@ -30,41 +30,13 @@ import { SolutionLinks } from './navigation_links/solution_links';
 import { ExploreLinks } from './navigation_links/explore_links';
 import { AdminLinks } from './navigation_links/admin_links';
 
-import { keyCodes } from '@elastic/eui/lib/services';
-
 export default class Layout extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      isFullScreen: true,
-    };
-  }
-
-  onKeyDown = event => {
-    if (event.keyCode === keyCodes.ESCAPE) {
-      event.preventDefault();
-      event.stopPropagation();
-      this.closeFullScreen();
-    }
-  };
-
-  toggleFullScreen = () => {
-    this.setState(prevState => ({
-      isFullScreen: !prevState.isFullScreen,
-    }));
-  };
-
-  closeFullScreen = () => {
-    this.setState({
-      isFullScreen: false,
-    });
-  };
+  navDrawerRef: any;
 
   renderLogo() {
     return (
       <EuiHeaderLogo
-        iconType="logoKibana"
+        iconType="logoElastic"
         href="/#/layout/nav-drawer"
         aria-label="Goes to home"
       />
@@ -86,7 +58,7 @@ export default class Layout extends React.Component {
       {
         text: 'Home',
         href: '#',
-        onClick: e => {
+        onClick: (e: { preventDefault: () => void; }) => {
           e.preventDefault();
           console.log('You clicked home');
         },
@@ -98,7 +70,7 @@ export default class Layout extends React.Component {
     return <EuiHeaderBreadcrumbs breadcrumbs={breadcrumbs} />;
   }
 
-  setNavDrawerRef = ref => (this.navDrawerRef = ref);
+  setNavDrawerRef = (ref: any) => (this.navDrawerRef = ref);
 
   render() {
     console.log(ExploreLinks);
@@ -112,7 +84,7 @@ export default class Layout extends React.Component {
             height: '100%',
             width: '100%',
           }}
-          onKeyDown={this.onKeyDown}>
+        >
           <EuiHeader>
             <EuiHeaderSection grow={false}>
               <EuiShowFor sizes={['xs', 's']}>

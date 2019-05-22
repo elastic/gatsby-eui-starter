@@ -14,6 +14,7 @@
     "gatsby-plugin-react-helmet": "^3.0.12",
     "gatsby-plugin-sass": "^2.0.11",
     "gatsby-plugin-sharp": "^2.0.37",
+    "gatsby-plugin-typescript": "^2.0.14",
     "gatsby-source-filesystem": "^2.0.37",
     "gatsby-transformer-sharp": "^2.1.19",
     "gh-pages": "^2.0.1",
@@ -25,7 +26,18 @@
     "react-helmet": "^5.2.1"
   },
   "devDependencies": {
-    "prettier": "^1.17.1"
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.4.0",
+    "@babel/plugin-proposal-class-properties": "^7.4.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.4.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/preset-env": "^7.4.1",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/preset-typescript": "^7.3.2",
+    "@types/node": "^12.0.2",
+    "@types/react-dom": "^16.8.4",
+    "prettier": "^1.17.1",
+    "typescript": "^3.3.3"
   },
   "keywords": [
     "gatsby",
@@ -35,13 +47,16 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "npm run type-check -- --watch",
+    "build": "npm run build:types && gatsby build",
+    "build:types": "tsc --emitDeclarationOnly",
     "develop": "gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public"
+    "deploy": "npm run build:types && gatsby build --prefix-paths && gh-pages -d public"
   },
   "repository": {
     "type": "git",
