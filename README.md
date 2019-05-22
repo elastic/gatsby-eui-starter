@@ -38,6 +38,15 @@ Jump right in to building Kibana prototypes with [EUI](https://github.com/elasti
 
     Open the `my-eui-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
 
+1. **Deploy your site**
+
+    When you're ready to deploy and share, you can use the provided `yarn deploy` script to do so. 
+
+    1. Modify the `pathPrefix` option in `gatsby-config.js` to reflect the name of your repo 
+    1. Setup a `gh-pages` branch in your repo and ensure that its enabled in the repository settings.
+    1. Deploy with `yarn deploy`
+    1. Access your site at https://your-username.github.io/repo-name
+
 ---
 
 # 👇 According to Gatsby
@@ -91,9 +100,5 @@ Looking for more guidance? Full documentation for Gatsby lives [on the website](
 - **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.org/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
 
 - **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.org/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
-
-## 💫 Deploy
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
 
 <!-- AUTO-GENERATED-CONTENT:END -->
