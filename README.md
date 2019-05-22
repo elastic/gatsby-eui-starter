@@ -5,7 +5,7 @@
   </a>
 </p>
 <h1 align="center">
-  Elastic's Gatsby Kibana Starter
+  Elastic's Gatsby EUI Starter
 </h1>
 
 Jump right in to building Kibana prototypes with [EUI](https://github.com/elastic/eui).
@@ -14,11 +14,11 @@ Jump right in to building Kibana prototypes with [EUI](https://github.com/elasti
 
 1.  **Create a Gatsby site.**
 
-    Use the Gatsby CLI to create a new site, specifying the Kibana starter.
+    Use the Gatsby CLI to create a new site, specifying the EUI starter.
 
     ```sh
     # create a new Gatsby site using the default starter
-    gatsby new my-kibana-starter https://github.com/elastic/gatsby-eui-starter
+    gatsby new my-eui-starter https://github.com/elastic/gatsby-eui-starter
     ```
 
 1.  **Start developing.**
@@ -26,7 +26,7 @@ Jump right in to building Kibana prototypes with [EUI](https://github.com/elasti
     Navigate into your new site’s directory and start it up.
 
     ```sh
-    cd my-kibana-starter/
+    cd my-eui-starter/
     gatsby develop
     ```
 
@@ -36,7 +36,7 @@ Jump right in to building Kibana prototypes with [EUI](https://github.com/elasti
 
     _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
 
-    Open the `my-kibana-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
+    Open the `my-eui-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
 
 ---
 

@@ -2,7 +2,7 @@ module.exports = {
   pathPrefix: '/gatsby-eui-starter',
   siteMetadata: {
     title: `Gatsby EUI Starter`,
-    description: `Start building Kibana protoypes quickly with the Gatsby Kibana Starter`,
+    description: `Start building Kibana protoypes quickly with the Gatsby EUI Starter`,
     author: `@daveyholler`,
   },
   plugins: [
