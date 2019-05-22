@@ -1,4 +1,3 @@
-import React from 'react';
 import { pinExtraAction } from './pin_extra_action';
 
 export const SolutionLinks = [

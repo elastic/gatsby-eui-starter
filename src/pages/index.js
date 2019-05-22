@@ -1,7 +1,7 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from 'react';
+import { Link } from 'gatsby';
 
-import Layout from "../components/layout"
+import Layout from '../components/layout'
 import {
   EuiPage,
   EuiPageBody,
@@ -47,6 +47,6 @@ export default class Index extends React.Component {
           </EuiPageBody>
         </EuiPage>
       </Layout>
-    )
+    );
   }
 }

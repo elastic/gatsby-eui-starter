@@ -1,5 +1,5 @@
-import React from 'react'
-import { Link } from 'gatsby'
+import React from 'react';
+import { Link } from 'gatsby';
 
 import Layout from '../components/layout';
 import {
@@ -47,6 +47,6 @@ export default class SecondPage extends React.Component {
           </EuiPageBody>
         </EuiPage>
       </Layout>
-    )
+    );
   }
-};
+}
