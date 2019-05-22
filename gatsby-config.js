@@ -1,7 +1,7 @@
 module.exports = {
-  pathPrefix: '/gatsby-kibana-starter',
+  pathPrefix: '/gatsby-eui-starter',
   siteMetadata: {
-    title: `Gatsby Kibana Starter`,
+    title: `Gatsby EUI Starter`,
     description: `Start building Kibana protoypes quickly with the Gatsby Kibana Starter`,
     author: `@daveyholler`,
   },
@@ -20,7 +20,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-kibana-starter`,
+        name: `gatsby-eui-starter`,
         short_name: `starter`,
         start_url: `/`,
         background_color: `#F5F7FA`,

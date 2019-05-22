@@ -1,7 +1,7 @@
 {
-  "name": "gatsby-kibana-starter",
+  "name": "gatsby-eui-starter",
   "private": true,
-  "description": "Start building Kibana protoypes quickly with the Gatsby Kibana Starter",
+  "description": "Start building Kibana protoypes quickly with the Gatsby EUI Starter",
   "version": "1.0.0",
   "author": "Davey Holler <davey.holler@elastic.co>",
   "dependencies": {
@@ -44,9 +44,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/elastic/gatsby-kibana-starter"
+    "url": "https://github.com/elastic/gatsby-eui-starter"
   },
   "bugs": {
-    "url": "https://github.com/elastic/gatsby-kibana-starter/issues"
+    "url": "https://github.com/elastic/gatsby-eui-starter/issues"
   }
 }

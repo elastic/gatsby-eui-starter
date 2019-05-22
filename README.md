@@ -1,7 +1,7 @@
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://www.gatsbyjs.org">
-    <img alt="Gatsby" src="https://raw.githubusercontent.com/elastic/gatsby-kibana-starter/master/src/images/logo_elastic.png" width="60" />
+    <img alt="Gatsby" src="https://raw.githubusercontent.com/elastic/gatsby-eui-starter/master/src/images/logo_elastic.png" width="60" />
   </a>
 </p>
 <h1 align="center">
@@ -18,7 +18,7 @@ Jump right in to building Kibana prototypes with [EUI](https://github.com/elasti
 
     ```sh
     # create a new Gatsby site using the default starter
-    gatsby new my-kibana-starter https://github.com/elastic/gatsby-kibana-starter
+    gatsby new my-kibana-starter https://github.com/elastic/gatsby-eui-starter
     ```
 
 1.  **Start developing.**
