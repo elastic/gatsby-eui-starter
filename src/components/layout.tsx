@@ -75,7 +75,7 @@ export default class Layout extends React.Component {
   render() {
     console.log(ExploreLinks);
     return (
-      <EuiFocusTrap>
+      <div>
         <div
           style={{
             position: 'fixed',
@@ -119,7 +119,7 @@ export default class Layout extends React.Component {
           </EuiNavDrawer>
           <div className="demoWrapper">{this.props.children}</div>
         </div>
-      </EuiFocusTrap>
+      </div>
     );
   }
 }

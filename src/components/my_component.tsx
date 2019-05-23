@@ -1,9 +1,13 @@
 import React from 'react';
+import { Link } from 'gatsby';
+import { EuiButton } from '@elastic/eui';
 
 export default class MyComponent extends React.Component {
   render() {
     return (
-      <h1>My Component</h1>
+      <Link to="page-2">
+        <EuiButton>Go to page 2</EuiButton>
+      </Link>
     )
   }
 }
