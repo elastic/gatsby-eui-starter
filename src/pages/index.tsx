@@ -4,8 +4,8 @@ import { Link } from 'gatsby';
 import Layout from '../components/layout';
 import {
   EuiButton,
+  EuiButtonEmpty,
   EuiCode,
-  EuiLink,
   EuiPage,
   EuiPageBody,
   EuiPageContent,
@@ -34,12 +34,12 @@ export default class Index extends React.Component {
                 </EuiTitle>
               </EuiPageHeaderSection>
               <EuiPageHeaderSection>
-                <EuiLink href="https://github.com/elastic/gatsby-eui-starter" target="_blank">
-                  <EuiButton
-                    iconType="logoGithub">
-                    Open in Github
-                  </EuiButton>
-                </EuiLink>
+                <EuiButton
+                  iconType="logoGithub"
+                  href="https://github.com/elastic/gatsby-eui-starter"
+                  fill>
+                  Open in Github
+                </EuiButton>
               </EuiPageHeaderSection>
             </EuiPageHeader>
             <EuiPageContent>
@@ -54,7 +54,7 @@ export default class Index extends React.Component {
                 </EuiPageContentHeaderSection>
               </EuiPageContentHeader>
               <EuiPageContentBody>
-                <EuiText size="m">
+                <EuiText>
                   <p>This Gatsby EUI Starter is intended to help you quickly build and deploy prototypes for Kibana apps with the EUI library.</p>
                   <h3>Clone the project</h3>
                   <p>To use this starter, simply run <EuiCode>gatsby new my-app https://github.com/elastic/gatsby-eui-starter</EuiCode>. Then <EuiCode>cd my-app</EuiCode> and start editing.</p>
