@@ -11,16 +11,24 @@ import '../styles/index.scss'
 import './layout.scss'
 
 import {
+  // @ts-ignore
   EuiHeader,
+  // @ts-ignore
   EuiHeaderSection,
+  // @ts-ignore
   EuiHeaderSectionItem,
+  // @ts-ignore
   EuiHeaderSectionItemButton,
+  // @ts-ignore
   EuiHeaderBreadcrumbs,
   EuiHeaderLogo,
   EuiIcon,
+  // @ts-ignore
   EuiNavDrawerGroup,
+  // @ts-ignore
   EuiNavDrawer,
   EuiHorizontalRule,
+  // @ts-ignore
   EuiShowFor,
   EuiFocusTrap,
 } from '@elastic/eui';
