@@ -19,7 +19,7 @@ export default class SecondPage extends React.Component {
     return (
       <Layout>
         {/* You can delete this and put whatever you want in here */}
-        <EuiPage>
+        <EuiPage restrictWidth>
           <EuiPageBody>
             <EuiPageHeader>
               <EuiPageHeaderSection>
