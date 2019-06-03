@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
-
 import Layout from '../components/layout';
+import MyComponent from '../components/my_component';
 import {
   EuiButton,
   EuiButtonEmpty,
@@ -18,9 +18,8 @@ import {
   EuiTitle,
 } from '@elastic/eui';
 
-import MyComponent from '../components/my_component';
 
-export default class Index extends React.Component {
+export default class Index extends React.Component<any, any> {
   render() {
     return (
       <Layout>
