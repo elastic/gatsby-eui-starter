@@ -14,8 +14,6 @@ import sun from './assets/sun.svg';
 
 import {
   EuiButton,
-  EuiFlexGroup,
-  EuiFlexItem,
   // @ts-ignore
   EuiHeader,
   // @ts-ignore
@@ -42,7 +40,9 @@ import { SolutionLinks } from '../navigation_links/solution_links';
 import { ExploreLinks } from '../navigation_links/explore_links';
 import { AdminLinks } from '../navigation_links/admin_links';
 
-if (localStorage.getItem('isDarkTheme') === 'true') {
+export const ThemeContext = React.createContext('dark');
+
+if (localStorage.getItem('theme') === 'dark') {
   require('../../themes/theme_dark.scss');
 } else {
   require('../../themes/theme_light.scss');
@@ -50,12 +50,12 @@ if (localStorage.getItem('isDarkTheme') === 'true') {
 
 export default class Chrome extends React.Component<any, any> {
   navDrawerRef: any;
-  initialTheme = localStorage.getItem('isDarkTheme') === 'true' ? true : false;
+  initialTheme = localStorage.getItem('theme') === 'light' ? 'light' : 'dark';
 
   constructor(props: any) {
     super(props);
     this.state = {
-      isDarkTheme: this.initialTheme,
+      theme: this.initialTheme,
       themeIsLoading: false,
     };
   }
@@ -63,11 +63,11 @@ export default class Chrome extends React.Component<any, any> {
   handleChangeTheme = () => {
     this.setState(
       {
-        isDarkTheme: !this.state.isDarkTheme,
+        theme: this.state.theme == 'dark' ? 'light' : 'dark',
         themeIsLoading: true,
       },
       () => {
-        localStorage.setItem('isDarkTheme', this.state.isDarkTheme);
+        localStorage.setItem('theme', this.state.theme);
         window.location.reload();
       }
     );
@@ -117,7 +117,7 @@ export default class Chrome extends React.Component<any, any> {
 
     console.log(ExploreLinks);
     return (
-      <div>
+      <ThemeContext.Provider value={this.state.theme}>
         <div
           style={{
             position: 'fixed',
@@ -174,7 +174,7 @@ export default class Chrome extends React.Component<any, any> {
           </EuiNavDrawer>
           <div className="demoWrapper">{this.props.children}</div>
         </div>
-      </div>
+      </ThemeContext.Provider>
     );
   }
 }
