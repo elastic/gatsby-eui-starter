@@ -1,5 +1,5 @@
 /**
- * Layout component that queries for data
+ * Chrome component that queries for data
  * with Gatsby's StaticQuery component
  *
  * See: https://www.gatsbyjs.org/docs/static-query/
@@ -7,12 +7,10 @@
 
 import React from 'react';
 
-import '../styles/index.scss'
-import './layout.scss'
 // @ts-ignore
-import moon from '../images/moon.svg';
+import moon from './assets/moon.svg';
 // @ts-ignore
-import sun from '../images/sun.svg';
+import sun from './assets/sun.svg';
 
 import {
   EuiButton,
@@ -39,19 +37,18 @@ import {
   EuiShowFor,
 } from '@elastic/eui';
 
-import { TopLinks } from './navigation_links/top_links';
-import { SolutionLinks } from './navigation_links/solution_links';
-import { ExploreLinks } from './navigation_links/explore_links';
-import { AdminLinks } from './navigation_links/admin_links';
+import { TopLinks } from '../navigation_links/top_links';
+import { SolutionLinks } from '../navigation_links/solution_links';
+import { ExploreLinks } from '../navigation_links/explore_links';
+import { AdminLinks } from '../navigation_links/admin_links';
 
 if (localStorage.getItem('isDarkTheme') === 'true') {
-  require('../../node_modules/@elastic/eui/src/theme_dark.scss');
+  require('../../themes/theme_dark.scss');
 } else {
-  require('../../node_modules/@elastic/eui/src/theme_light.scss');
+  require('../../themes/theme_light.scss');
 }
 
-export default class Layout extends React.Component<any, any> {
-
+export default class Chrome extends React.Component<any, any> {
   navDrawerRef: any;
   initialTheme = localStorage.getItem('isDarkTheme') === 'true' ? true : false;
 
@@ -59,26 +56,28 @@ export default class Layout extends React.Component<any, any> {
     super(props);
     this.state = {
       isDarkTheme: this.initialTheme,
-      themeIsLoading: false
-    }
+      themeIsLoading: false,
+    };
   }
 
   handleChangeTheme = () => {
-    this.setState({
-      isDarkTheme: !this.state.isDarkTheme,
-      themeIsLoading: true
-    }, () => {
-      localStorage.setItem('isDarkTheme', this.state.isDarkTheme);
-      window.location.reload();
-    })
-  }
-
+    this.setState(
+      {
+        isDarkTheme: !this.state.isDarkTheme,
+        themeIsLoading: true,
+      },
+      () => {
+        localStorage.setItem('isDarkTheme', this.state.isDarkTheme);
+        window.location.reload();
+      }
+    );
+  };
 
   renderLogo() {
     return (
       <EuiHeaderLogo
         iconType="logoElastic"
-        href="/#/layout/nav-drawer"
+        href="/#/chrome/nav-drawer"
         aria-label="Goes to home"
       />
     );
@@ -99,7 +98,7 @@ export default class Layout extends React.Component<any, any> {
       {
         text: 'Home',
         href: '#',
-        onClick: (e: { preventDefault: () => void; }) => {
+        onClick: (e: { preventDefault: () => void }) => {
           e.preventDefault();
           console.log('You clicked home');
         },
@@ -112,7 +111,7 @@ export default class Layout extends React.Component<any, any> {
   }
 
   setNavDrawerRef = (ref: any) => (this.navDrawerRef = ref);
-  
+
   render() {
     const themeIcon = this.state.isDarkTheme ? sun : moon;
 
@@ -126,8 +125,7 @@ export default class Layout extends React.Component<any, any> {
             left: 0,
             height: '100%',
             width: '100%',
-          }}
-        >
+          }}>
           <EuiHeader>
             <EuiHeaderSection grow={false}>
               <EuiShowFor sizes={['xs', 's']}>
@@ -146,13 +144,20 @@ export default class Layout extends React.Component<any, any> {
             {this.renderBreadcrumbs()}
 
             <EuiHeaderSection side="right">
-              <EuiHeaderSectionItem style={{display: 'flex', alignItems: 'center', width: '11rem', justifyContent: 'center', paddingLeft: '.5rem', paddingRight: '.5rem'}}>
+              <EuiHeaderSectionItem
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  width: '11rem',
+                  justifyContent: 'center',
+                  paddingLeft: '.5rem',
+                  paddingRight: '.5rem',
+                }}>
                 <EuiButton
                   size="s"
                   iconType={themeIcon}
                   onClick={() => this.handleChangeTheme()}
-                  isLoading={this.state.themeIsLoading}
-                >
+                  isLoading={this.state.themeIsLoading}>
                   Switch Theme
                 </EuiButton>
               </EuiHeaderSectionItem>

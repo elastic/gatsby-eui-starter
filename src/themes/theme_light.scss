@@ -1,0 +1,9 @@
+// This file generates a blob file that has a light background
+
+// If you want to change the dark theme, replace this line
+@import '~@elastic/eui/src/themes/eui/eui_colors_light';
+
+// These are required
+@import '../global_styling/index';
+@import '~@elastic/eui/src/components/index';
+@import '../components/index';

@@ -1,7 +1,12 @@
-/**
- * Implement Gatsby's Browser APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/browser-apis/
- */
+import React from 'react';
+import Chrome from './src/components/chrome/chrome';
 
-// You can delete this file if you're not using it
+export const ThemeContext = React.createContext('light');
+
+export const wrapRootElement = ({ element }) => {
+  return (
+    <ThemeContext.Provider value="dark">
+      <Chrome>{element}</Chrome>
+    </ThemeContext.Provider>
+  );
+};
