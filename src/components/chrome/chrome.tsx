@@ -118,62 +118,53 @@ export default class Chrome extends React.Component<any, any> {
     console.log(ExploreLinks);
     return (
       <ThemeContext.Provider value={this.state.theme}>
-        <div
-          style={{
-            position: 'fixed',
-            top: 0,
-            left: 0,
-            height: '100%',
-            width: '100%',
-          }}>
-          <EuiHeader>
-            <EuiHeaderSection grow={false}>
-              <EuiShowFor sizes={['xs', 's']}>
-                <EuiHeaderSectionItem border="right">
-                  {this.renderMenuTrigger()}
-                </EuiHeaderSectionItem>
-              </EuiShowFor>
+        <EuiHeader className="chrHeader">
+          <EuiHeaderSection grow={false}>
+            <EuiShowFor sizes={['xs', 's']}>
               <EuiHeaderSectionItem border="right">
-                {this.renderLogo()}
+                {this.renderMenuTrigger()}
               </EuiHeaderSectionItem>
-              <EuiHeaderSectionItem border="right">
-                {/* <HeaderSpacesMenu /> */}
-              </EuiHeaderSectionItem>
-            </EuiHeaderSection>
+            </EuiShowFor>
+            <EuiHeaderSectionItem border="right">
+              {this.renderLogo()}
+            </EuiHeaderSectionItem>
+            <EuiHeaderSectionItem border="right">
+              {/* <HeaderSpacesMenu /> */}
+            </EuiHeaderSectionItem>
+          </EuiHeaderSection>
 
-            {this.renderBreadcrumbs()}
+          {this.renderBreadcrumbs()}
 
-            <EuiHeaderSection side="right">
-              <EuiHeaderSectionItem
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  width: '11rem',
-                  justifyContent: 'center',
-                  paddingLeft: '.5rem',
-                  paddingRight: '.5rem',
-                }}>
-                <EuiButton
-                  size="s"
-                  iconType={themeIcon}
-                  onClick={() => this.handleChangeTheme()}
-                  isLoading={this.state.themeIsLoading}>
-                  Switch Theme
-                </EuiButton>
-              </EuiHeaderSectionItem>
-            </EuiHeaderSection>
-          </EuiHeader>
-          <EuiNavDrawer ref={this.setNavDrawerRef}>
-            <EuiNavDrawerGroup listItems={TopLinks} />
-            <EuiHorizontalRule margin="none" />
-            <EuiNavDrawerGroup listItems={ExploreLinks} />
-            <EuiHorizontalRule margin="none" />
-            <EuiNavDrawerGroup listItems={SolutionLinks} />
-            <EuiHorizontalRule margin="none" />
-            <EuiNavDrawerGroup listItems={AdminLinks} />
-          </EuiNavDrawer>
-          <div className="demoWrapper">{this.props.children}</div>
-        </div>
+          <EuiHeaderSection side="right">
+            <EuiHeaderSectionItem
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                width: '11rem',
+                justifyContent: 'center',
+                paddingLeft: '.5rem',
+                paddingRight: '.5rem',
+              }}>
+              <EuiButton
+                size="s"
+                iconType={themeIcon}
+                onClick={() => this.handleChangeTheme()}
+                isLoading={this.state.themeIsLoading}>
+                Switch Theme
+              </EuiButton>
+            </EuiHeaderSectionItem>
+          </EuiHeaderSection>
+        </EuiHeader>
+        <EuiNavDrawer ref={this.setNavDrawerRef}>
+          <EuiNavDrawerGroup listItems={TopLinks} />
+          <EuiHorizontalRule margin="none" />
+          <EuiNavDrawerGroup listItems={ExploreLinks} />
+          <EuiHorizontalRule margin="none" />
+          <EuiNavDrawerGroup listItems={SolutionLinks} />
+          <EuiHorizontalRule margin="none" />
+          <EuiNavDrawerGroup listItems={AdminLinks} />
+        </EuiNavDrawer>
+        <div className="chrWrap">{this.props.children}</div>
       </ThemeContext.Provider>
     );
   }
