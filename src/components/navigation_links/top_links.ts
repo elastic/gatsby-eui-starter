@@ -14,19 +14,19 @@ export const TopLinks = [
       listItems: [
         {
           label: 'My dashboard',
-          href: '/#/layout/nav-drawer',
+          href: '/#/chrome/nav-drawer',
           iconType: 'dashboardApp',
           extraAction: faveExtraAction,
         },
         {
           label: 'Workpad with title that wraps',
-          href: '/#/layout/nav-drawer',
+          href: '/#/chrome/nav-drawer',
           iconType: 'canvasApp',
           extraAction: faveExtraAction,
         },
         {
           label: 'My logs',
-          href: '/#/layout/nav-drawer',
+          href: '/#/chrome/nav-drawer',
           iconType: 'loggingApp',
           'aria-label': 'This is an alternate aria-label',
           extraAction: faveExtraAction,
@@ -42,7 +42,7 @@ export const TopLinks = [
       listItems: [
         {
           label: 'My workpad',
-          href: '/#/layout/nav-drawer',
+          href: '/#/chrome/nav-drawer',
           iconType: 'canvasApp',
           extraAction: {
             color: 'subdued',
@@ -54,7 +54,7 @@ export const TopLinks = [
         },
         {
           label: 'My logs',
-          href: '/#/layout/nav-drawer',
+          href: '/#/chrome/nav-drawer',
           iconType: 'loggingApp',
           extraAction: {
             color: 'subdued',

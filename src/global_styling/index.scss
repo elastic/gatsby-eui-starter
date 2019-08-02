@@ -1,0 +1,5 @@
+// Imported global styling from EUI
+@import '~@elastic/eui/src/global_styling/index';
+
+// Site specific global styling
+@import './mixins/index';

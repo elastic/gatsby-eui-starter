@@ -6,7 +6,7 @@
   "author": "Davey Holler <davey.holler@elastic.co>",
   "dependencies": {
     "@elastic/datemath": "^5.0.2",
-    "@elastic/eui": "^11.2.1",
+    "@elastic/eui": "^13.1.1",
     "gatsby": "^2.5.7",
     "gatsby-image": "^2.1.0",
     "gatsby-plugin-manifest": "^2.1.1",
@@ -45,7 +45,7 @@
     "eui",
     "elastic"
   ],
-  "license": "MIT",
+  "license": "Apache-2.0",
   "scripts": {
     "type-check": "tsc --noEmit",
     "type-check:watch": "npm run type-check -- --watch",
