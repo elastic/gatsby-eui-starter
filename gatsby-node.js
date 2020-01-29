@@ -4,14 +4,8 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
-exports.onCreateWebpackConfig = ({
-  stage,
-  rules,
-  loaders,
-  plugins,
-  actions,
-}) => {
-  if (stage === "build-html") {
+exports.onCreateWebpackConfig = ({ stage, loaders, plugins, actions }) => {
+  if (stage === 'build-html') {
     actions.setWebpackConfig({
       module: {
         rules: [
@@ -27,6 +21,6 @@ exports.onCreateWebpackConfig = ({
           window: {},
         }),
       ],
-    })
+    });
   }
-}
+};

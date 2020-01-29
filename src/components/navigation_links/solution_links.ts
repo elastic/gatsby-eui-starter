@@ -10,19 +10,19 @@ export const SolutionLinks = [
   {
     label: 'Infrastructure',
     href: '/#/chrome/nav-drawer',
-    iconType: 'infraApp',
+    iconType: 'metricsApp',
     extraAction: pinExtraAction,
   },
   {
     label: 'Log viewer',
     href: '/#/chrome/nav-drawer',
-    iconType: 'loggingApp',
+    iconType: 'logsApp',
     extraAction: pinExtraAction,
   },
   {
     label: 'Uptime',
     href: '/#/chrome/nav-drawer',
-    iconType: 'upgradeAssistantApp',
+    iconType: 'uptimeApp',
     extraAction: pinExtraAction,
   },
   {

@@ -6,10 +6,10 @@ import { EuiEmptyPrompt, EuiButton } from '@elastic/eui';
 const NotFoundPage = () => (
   <EuiEmptyPrompt
     iconType="editorStrike"
-    title={<h2>Ack! There's nothing here.</h2>}
+    title={<h2>Ack! There&apos;s nothing here.</h2>}
     body={
       <Fragment>
-        <p>You found a page that doesn't exist.</p>
+        <p>You found a page that doesn&apos;t exist.</p>
       </Fragment>
     }
     actions={

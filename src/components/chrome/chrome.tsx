@@ -63,7 +63,7 @@ export default class Chrome extends React.Component<any, any> {
   handleChangeTheme = () => {
     this.setState(
       {
-        theme: this.state.theme == 'dark' ? 'light' : 'dark',
+        theme: this.state.theme === 'dark' ? 'light' : 'dark',
         themeIsLoading: true,
       },
       () => {
@@ -118,45 +118,47 @@ export default class Chrome extends React.Component<any, any> {
     console.log(ExploreLinks);
     return (
       <ThemeContext.Provider value={this.state.theme}>
-        <EuiHeader className="chrHeader">
-          <EuiHeaderSection grow={false}>
-            <EuiShowFor sizes={['xs', 's']}>
+        <div>
+          <EuiHeader className="chrHeader">
+            <EuiHeaderSection grow={false}>
+              <EuiShowFor sizes={['xs', 's']}>
+                <EuiHeaderSectionItem border="right">
+                  {this.renderMenuTrigger()}
+                </EuiHeaderSectionItem>
+              </EuiShowFor>
               <EuiHeaderSectionItem border="right">
-                {this.renderMenuTrigger()}
+                {this.renderLogo()}
               </EuiHeaderSectionItem>
-            </EuiShowFor>
-            <EuiHeaderSectionItem border="right">
-              {this.renderLogo()}
-            </EuiHeaderSectionItem>
-            <EuiHeaderSectionItem border="right">
-              {/* <HeaderSpacesMenu /> */}
-            </EuiHeaderSectionItem>
-          </EuiHeaderSection>
+              <EuiHeaderSectionItem border="right">
+                {/* <HeaderSpacesMenu /> */}
+              </EuiHeaderSectionItem>
+            </EuiHeaderSection>
 
-          {this.renderBreadcrumbs()}
+            {this.renderBreadcrumbs()}
 
-          <EuiHeaderSection side="right">
-            <EuiHeaderSectionItem className="chrHeader__themeSection">
-              <EuiButton
-                size="s"
-                iconType={themeIcon}
-                onClick={() => this.handleChangeTheme()}
-                isLoading={this.state.themeIsLoading}>
-                Switch Theme
-              </EuiButton>
-            </EuiHeaderSectionItem>
-          </EuiHeaderSection>
-        </EuiHeader>
-        <EuiNavDrawer ref={this.setNavDrawerRef}>
-          <EuiNavDrawerGroup listItems={TopLinks} />
-          <EuiHorizontalRule margin="none" />
-          <EuiNavDrawerGroup listItems={ExploreLinks} />
-          <EuiHorizontalRule margin="none" />
-          <EuiNavDrawerGroup listItems={SolutionLinks} />
-          <EuiHorizontalRule margin="none" />
-          <EuiNavDrawerGroup listItems={AdminLinks} />
-        </EuiNavDrawer>
-        <div className="chrWrap">{this.props.children}</div>
+            <EuiHeaderSection side="right">
+              <EuiHeaderSectionItem className="chrHeader__themeSection">
+                <EuiButton
+                  size="s"
+                  iconType={themeIcon}
+                  onClick={() => this.handleChangeTheme()}
+                  isLoading={this.state.themeIsLoading}>
+                  Switch Theme
+                </EuiButton>
+              </EuiHeaderSectionItem>
+            </EuiHeaderSection>
+          </EuiHeader>
+          <EuiNavDrawer ref={this.setNavDrawerRef}>
+            <EuiNavDrawerGroup listItems={TopLinks} />
+            <EuiHorizontalRule margin="none" />
+            <EuiNavDrawerGroup listItems={ExploreLinks} />
+            <EuiHorizontalRule margin="none" />
+            <EuiNavDrawerGroup listItems={SolutionLinks} />
+            <EuiHorizontalRule margin="none" />
+            <EuiNavDrawerGroup listItems={AdminLinks} />
+          </EuiNavDrawer>
+          <div className="chrWrap">{this.props.children}</div>
+        </div>
       </ThemeContext.Provider>
     );
   }
