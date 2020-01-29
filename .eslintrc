@@ -15,7 +15,7 @@
     "settings": {
       "import/resolver": {
         "node": {
-          "extensions": [".ts", ".tsx", ".js", ".json", ".mdx"]
+          "extensions": [".ts", ".tsx", ".js", ".json"]
         }
       },
       "react": {
