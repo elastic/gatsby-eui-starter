@@ -10,3 +10,12 @@
   left: 0;
   right: 0;
 }
+
+.chrHeader__themeSection {
+  display: flex;
+  align-items: center;
+  width: $euiSize * 11;
+  justify-content: center;
+  padding-left: $euiSizeXS;
+  padding-right: $euiSizeXS;
+}

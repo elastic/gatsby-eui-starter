@@ -136,15 +136,7 @@ export default class Chrome extends React.Component<any, any> {
           {this.renderBreadcrumbs()}
 
           <EuiHeaderSection side="right">
-            <EuiHeaderSectionItem
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                width: '11rem',
-                justifyContent: 'center',
-                paddingLeft: '.5rem',
-                paddingRight: '.5rem',
-              }}>
+            <EuiHeaderSectionItem className="chrHeader__themeSection">
               <EuiButton
                 size="s"
                 iconType={themeIcon}
