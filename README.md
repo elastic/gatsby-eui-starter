@@ -12,7 +12,15 @@ Jump right in to building Kibana prototypes with [EUI](https://github.com/elasti
 
 ## 🚀 Quick start
 
-1.  **Create a Gatsby site.**
+1.  **Install Gatsby.**
+
+    Assuming you already have NPM installed, install the gatsby-cli globally.
+
+    ```sh
+    npm install -g gatsby-cli
+    ```
+
+2.  **Create a Gatsby site.**
 
     Use the Gatsby CLI to create a new site, specifying the EUI starter.
 
@@ -36,11 +44,11 @@ Jump right in to building Kibana prototypes with [EUI](https://github.com/elasti
 
     _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
 
-    Open the `my-eui-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
+    Open the `my-eui-starter` directory in your code editor of choice and edit `src/pages/index.tsx`. Save your changes and the browser will update in real time!
 
 1. **Deploy your site**
 
-    When you're ready to deploy and share, you can use the provided `yarn deploy` script to do so. 
+    When you're ready to deploy and share, follow these steps.
 
     1. Modify the `pathPrefix` option in `gatsby-config.js` to reflect the name of your repo 
     1. Setup a `gh-pages` branch in your repo and ensure that its enabled in the repository settings.
