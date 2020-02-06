@@ -10,7 +10,7 @@
     "@elastic/charts": "^16.2.1",
     "@elastic/datemath": "^5.0.2",
     "@elastic/eslint-config-kibana": "^0.15.0",
-    "@elastic/eui": "^18.3.0",
+    "@elastic/eui": "^19.0.0",
     "@types/enzyme": "^3.10.3",
     "@types/react-virtualized": "^9.21.2",
     "enzyme": "^3.10.0",
