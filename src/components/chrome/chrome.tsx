@@ -50,7 +50,7 @@ if (localStorage.getItem('theme') === 'dark') {
 
 export default class Chrome extends React.Component<any, any> {
   navDrawerRef: any;
-  initialTheme = localStorage.getItem('theme') === 'light' ? 'light' : 'dark';
+  initialTheme = localStorage.getItem('theme') === 'dark' ? 'dark' : 'light';
 
   constructor(props: any) {
     super(props);
@@ -61,13 +61,14 @@ export default class Chrome extends React.Component<any, any> {
   }
 
   handleChangeTheme = () => {
+    const nextTheme = this.state.theme === 'light' ? 'dark' : 'light';
     this.setState(
       {
-        theme: this.state.theme === 'dark' ? 'light' : 'dark',
+        theme: nextTheme,
         themeIsLoading: true,
       },
       () => {
-        localStorage.setItem('theme', this.state.theme);
+        localStorage.setItem('theme', nextTheme);
         window.location.reload();
       }
     );
@@ -115,7 +116,6 @@ export default class Chrome extends React.Component<any, any> {
   render() {
     const themeIcon = this.state.isDarkTheme ? sun : moon;
 
-    console.log(ExploreLinks);
     return (
       <ThemeContext.Provider value={this.state.theme}>
         <div>
