@@ -32,6 +32,8 @@ import {
   SecurityGroup,
 } from './collapsable_nav_list';
 
+import { HeaderSpacesMenu } from './header_spaces_menu';
+
 import HeaderUpdates from './header_updates';
 
 export const ThemeContext = React.createContext('dark');
@@ -74,7 +76,6 @@ export const Chrome = ({ children }: any) => {
     localStorage.getItem('theme') === 'dark' ? 'dark' : 'light';
   const [themeIsLoading, setThemeIsLoading] = useState(false);
   const [isAccountOpen, setIsAccountOpen] = useState(false);
-  const [isSpacesOpen, setIsSpacesOpen] = useState(false);
   const [theme, setTheme] = useState(initialTheme);
   document.body.classList.add('euiBody--headerIsFixed--double');
 
@@ -327,21 +328,7 @@ export const Chrome = ({ children }: any) => {
         position="fixed"
         sections={[
           {
-            items: [
-              collapsibleNav,
-              <EuiPopover
-                button={
-                  <EuiHeaderSectionItemButton
-                    aria-label="Account menu"
-                    onClick={() => setIsSpacesOpen(!isAccountOpen)}>
-                    <EuiAvatar type="space" name="Default Space" size="s" />
-                  </EuiHeaderSectionItemButton>
-                }
-                isOpen={isSpacesOpen}
-                closePopover={() => setIsSpacesOpen(false)}>
-                <div>asdf</div>
-              </EuiPopover>,
-            ],
+            items: [collapsibleNav, <HeaderSpacesMenu />],
             breadcrumbs: breadcrumbs,
             borders: 'right',
           },
