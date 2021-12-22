@@ -4,8 +4,9 @@
  *
  * See: https://www.gatsbyjs.org/docs/static-query/
  */
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import _ from 'lodash';
+import createCache from '@emotion/cache';
 
 import {
   EuiPopover,
@@ -24,6 +25,7 @@ import {
   EuiFlexItem,
   EuiHorizontalRule,
   EuiShowFor,
+  EuiProvider,
 } from '@elastic/eui';
 
 import {
@@ -36,13 +38,20 @@ import { HeaderSpacesMenu } from './header_spaces_menu';
 
 import HeaderUpdates from './header_updates';
 
-export const ThemeContext = React.createContext('dark');
+import '../../themes/theme_dark.scss';
+import '../../themes/theme_light.scss';
 
-if (localStorage.getItem('theme') === 'dark') {
-  require('../../themes/theme_dark.scss');
-} else {
-  require('../../themes/theme_light.scss');
-}
+const toggleTheme = (theme: string) => {
+  if (theme === 'dark') {
+    document.body.classList.remove('theme-light');
+    document.body.classList.add('theme-dark');
+  } else {
+    document.body.classList.remove('theme-dark');
+    document.body.classList.add('theme-light');
+  }
+};
+
+export const ThemeContext = React.createContext('dark');
 
 const TopLinks: EuiPinnableListGroupItemProps[] = [
   {
@@ -74,20 +83,24 @@ const LearnLinks: EuiPinnableListGroupItemProps[] = [
 export const Chrome = ({ children }: any) => {
   const initialTheme =
     localStorage.getItem('theme') === 'dark' ? 'dark' : 'light';
-  const [themeIsLoading, setThemeIsLoading] = useState(false);
   const [isAccountOpen, setIsAccountOpen] = useState(false);
-  const [theme, setTheme] = useState(initialTheme);
+  const [theme, _setTheme] = useState(initialTheme);
+  toggleTheme(initialTheme);
   document.body.classList.add('euiBody--headerIsFixed--double');
 
-  useEffect(() => {
+  const emotionCache = createCache({
+    key: 'eui-styles',
+    container: document.querySelector(
+      'meta[name="eui-styles-global"]'
+    ) as HTMLElement,
+  });
+
+  const setTheme = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light';
-    return () => {
-      // Clean up the subscription
-      localStorage.setItem('theme', newTheme);
-      setThemeIsLoading(true);
-      window.location.reload();
-    };
-  }, [theme]);
+    _setTheme(newTheme);
+    localStorage.setItem('theme', newTheme);
+    toggleTheme(newTheme);
+  };
 
   const breadcrumbs = [
     {
@@ -308,13 +321,7 @@ export const Chrome = ({ children }: any) => {
                 isOpen={isAccountOpen}
                 closePopover={() => setIsAccountOpen(false)}>
                 <div>
-                  <EuiButton
-                    size="s"
-                    iconType="invert"
-                    onClick={() =>
-                      setTheme(theme === 'light' ? 'dark' : 'light')
-                    }
-                    isLoading={themeIsLoading}>
+                  <EuiButton size="s" iconType="invert" onClick={setTheme}>
                     Switch Theme
                   </EuiButton>
                 </div>
@@ -343,9 +350,11 @@ export const Chrome = ({ children }: any) => {
 
   return (
     <ThemeContext.Provider value={theme}>
-      <EuiSpacer />
-      {headers}
-      {children}
+      <EuiProvider colorMode={theme} cache={emotionCache}>
+        <EuiSpacer />
+        {headers}
+        {children}
+      </EuiProvider>
     </ThemeContext.Provider>
   );
 };
