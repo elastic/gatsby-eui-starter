@@ -1,10 +1,5 @@
 // Imported global styling from EUI
-@import '~@elastic/eui/src/themes/eui-amsterdam/global_styling/index';
-
-// We use the fixed header from EUI so need this mixin
-body {
-  @include euiHeaderAffordForFixed($euiHeaderHeightCompensation * 2);
-}
+@import '~@elastic/eui/src/themes/amsterdam/global_styling/index';
 
 // Site specific global styling
 @import './mixins/index';
