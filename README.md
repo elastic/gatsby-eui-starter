@@ -8,6 +8,9 @@
   Elastic's Gatsby EUI Starter
 </h1>
 
+> [!Caution]
+> This repository is outdated and **shouldn't be used**. Please follow EUI's getting started guide to set up EUI with your framework of choice.
+
 Jump right in to building Kibana prototypes with [EUI](https://github.com/elastic/eui).
 
 ## 🚀 Quick start
